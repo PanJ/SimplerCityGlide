@@ -20,8 +20,6 @@ import {
 } from './actions';
 
 import LineSelector from 'components/LineSelector';
-import Button from 'components/Button';
-import H1 from 'components/H1';
 import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps';
 
 import styles from './styles.css';
