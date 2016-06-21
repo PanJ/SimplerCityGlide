@@ -9,25 +9,30 @@
   margin-left: -170px;
   padding: 10px;
   border-radius: 0 0 5px 5px;
+
   @media (max-width: 340px) {
-    margin-left: 0px;
-    left: 0%;
+    margin-left: 0;
+    left: 0;
   }
 }
+
 .span {
   margin-right: 10px;
 }
+
 .select {
   width: 70px;
   margin-right: 10px;
-  background: #ddd;
+  background: #DDD;
   padding: 5px;
   padding-left: 10px;
 }
+
 .label {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .radio {
   background-color: initial;
 }
