@@ -1,0 +1,33 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 340px;
+  z-index: 100;
+  background-color: white;
+  left: 50%;
+  margin-left: -170px;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  @media (max-width: 340px) {
+    margin-left: 0px;
+    left: 0%;
+  }
+}
+.span {
+  margin-right: 10px;
+}
+.select {
+  width: 70px;
+  margin-right: 10px;
+  background: #ddd;
+  padding: 5px;
+  padding-left: 10px;
+}
+.label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.radio {
+  background-color: initial;
+}
