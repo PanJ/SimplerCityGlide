@@ -32,9 +32,13 @@ export class FeaturePage extends React.Component {
     value: PropTypes.object,
   };
 
+  state = {
+    zoom: 11,
+  };
+
   componentDidMount() {
     this.props.loadData();
-    this.interval = setInterval(this.props.loadData, 500000);
+    this.interval = setInterval(this.props.loadData, 5000);
     this.checkCenter();
   }
 
@@ -48,6 +52,9 @@ export class FeaturePage extends React.Component {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.map.panTo(new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        this.setState({
+          currentPosition: new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+        });
       });
     }
   }
@@ -94,9 +101,15 @@ export class FeaturePage extends React.Component {
               ref={(map) => {
                 this.map = map;
               }}
-              defaultZoom={11}
+              defaultZoom={13}
               defaultCenter={{ lat: 13.7519623, lng: 100.5498467 }}
             >
+              {
+                this.state.currentPosition &&
+                  <Marker
+                    position={this.state.currentPosition}
+                  />
+              }
               {this.props.markers.map((marker, index) =>
                 <Marker
                   key={index}
