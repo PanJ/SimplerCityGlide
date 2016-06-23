@@ -26,6 +26,7 @@ export function* getData() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'Referer': 'http://cityglide.com/',
     },
     body: `MODE=get_gps&bus_lines=${value.line}&bound=${value.bound}`,
   });
